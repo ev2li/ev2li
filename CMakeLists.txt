@@ -20,6 +20,10 @@ force_redefine_file_macro_for_sources(ev2li)
 set(LIBS
     ev2li
 )
+option(BUILD_ALL "during dev" OFF)
+set(BUILD_ALL ON)
 
+if(BUILD_ALL)
 ev2li_add_executable(test_log tests/test_log.cc ev2li "${LIBS}")
+endif()
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
